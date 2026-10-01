@@ -10,14 +10,14 @@ Data Science teams frequently build accurate models locally, but struggle to dep
 
 ```mermaid
 graph TD
-    subgraph Data Engineering Pipeline (PySpark)
+    subgraph DE [Data Engineering Pipeline]
         A[Raw CSV Data] --> B[Data Validation]
         B --> C[PySpark Transformation & Cleaning]
         C --> D[Feature Engineering]
         D --> E[(PostgreSQL Feature Store)]
     end
     
-    subgraph MLOps Pipeline
+    subgraph ML [MLOps Pipeline]
         E --> F[Train/Test Split]
         F --> G[Train Logistic Regression Baseline]
         F --> H[Train XGBoost Classifier]
@@ -26,7 +26,7 @@ graph TD
         I -->|Register Best Model| J[Model Registry]
     end
     
-    subgraph Serving Layer
+    subgraph Serve [Serving Layer]
         J --> K[FastAPI Prediction Service]
         L[Client Request] --> K
         K --> M[Prediction Response]
