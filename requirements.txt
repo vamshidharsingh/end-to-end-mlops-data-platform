@@ -1,0 +1,11 @@
+pyspark==3.5.0
+sqlalchemy
+psycopg2-binary
+pandas
+scikit-learn
+xgboost
+mlflow
+fastapi
+uvicorn
+pytest
+apache-airflow==2.7.1
